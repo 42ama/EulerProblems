@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Linq;
 using System.Collections.Generic;
 using EulerProject.Utility.Helpers;
 using EulerProject.Utility.Interface;
@@ -18,7 +18,16 @@ namespace EulerProject.Solutions.From_1_to_100
 
         private long Calculate(int divisorCount)
         {
-            return 1;
+            List<long> terms = new List<long> { 1 };
+            int numberDivisors = 1;
+            long number = 1;
+            while(numberDivisors <= divisorCount)
+            {
+                terms.Add(terms.Last() + 1);
+                number = terms.Sum();
+                numberDivisors = Helper.DivisorCount(number);
+            }
+            return number;
         }
 
         private void Calculate5()
@@ -51,7 +60,7 @@ namespace EulerProject.Solutions.From_1_to_100
             {
                 Task = "Каково первое треугольное число, у которого более пятисот делителей.",
                 Result = Calculate(500).ToString(),
-                BenchmarkResult = WatchstopBenchmark.Benchmark(Calculate500)
+                BenchmarkResult = WatchstopBenchmark.Benchmark(Calculate500, 2, 3)
             });
 
             return pc;
