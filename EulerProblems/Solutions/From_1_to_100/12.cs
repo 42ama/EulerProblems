@@ -25,7 +25,7 @@ namespace EulerProject.Solutions.From_1_to_100
             {
                 terms.Add(terms.Last() + 1);
                 number = terms.Sum();
-                numberDivisors = Helper.DivisorCount(number);
+                numberDivisors = Helper.DivisorsCount(number);
             }
             return number;
         }
