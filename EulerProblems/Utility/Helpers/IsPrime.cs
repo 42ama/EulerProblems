@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EulerProject.Utility.Helpers
+namespace EulerProblems.Utility.Helpers
 {
     public static partial class Helper
     {

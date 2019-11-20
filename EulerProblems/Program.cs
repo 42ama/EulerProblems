@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using EulerProject.Solutions.From_1_to_100;
-using EulerProject.Utility.DataContainers;
-using EulerProject.Utility.Services;
+using EulerProblems.Solutions.From_1_to_100;
+using EulerProblems.Utility.DataContainers;
+using EulerProblems.Utility.Services;
 
-namespace EulerProject.Main
+namespace EulerProblems.Main
 {
     class Program
     {

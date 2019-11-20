@@ -1,11 +1,11 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
-using EulerProject.Utility.Helpers;
-using EulerProject.Utility.Interface;
-using EulerProject.Utility.DataContainers;
-using EulerProject.Utility.Services;
+using EulerProblems.Utility.Helpers;
+using EulerProblems.Utility.Interface;
+using EulerProblems.Utility.DataContainers;
+using EulerProblems.Utility.Services;
 
-namespace EulerProject.Solutions.From_1_to_100
+namespace EulerProblems.Solutions.From_1_to_100
 {
     public class Twelve
     {

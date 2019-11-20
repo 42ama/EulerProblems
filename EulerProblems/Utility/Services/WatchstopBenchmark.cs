@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Diagnostics;
-using EulerProject.Utility.Helpers;
-using EulerProject.Utility.DataContainers;
+using EulerProblems.Utility.Helpers;
+using EulerProblems.Utility.DataContainers;
 
-namespace EulerProject.Utility.Services
+namespace EulerProblems.Utility.Services
 {
     public static class WatchstopBenchmark
     {

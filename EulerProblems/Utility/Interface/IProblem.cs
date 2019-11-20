@@ -1,6 +1,6 @@
-﻿using EulerProject.Utility.DataContainers;
+﻿using EulerProblems.Utility.DataContainers;
 
-namespace EulerProject.Utility.Interface
+namespace EulerProblems.Utility.Interface
 {
     public interface IProblem
     {

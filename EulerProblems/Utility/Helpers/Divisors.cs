@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EulerProject.Utility.Helpers
+namespace EulerProblems.Utility.Helpers
 {
     public static partial class Helper
     {

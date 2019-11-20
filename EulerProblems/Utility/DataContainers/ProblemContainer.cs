@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace EulerProject.Utility.DataContainers
+namespace EulerProblems.Utility.DataContainers
 {
     public class ProblemContainer
     {
