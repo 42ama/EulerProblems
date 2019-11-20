@@ -55,7 +55,7 @@ namespace EulerProject.Solutions.From_1_to_100
             {
                 Task = "Наибольшее число-палиндром, полученное умножением двух трехзначных чисел.",
                 Result = $"{calc} = {numberOne} * {numberTwo}",
-                BenchmarkResult = WatchstopBenchmark.Benchmark(Calculate)
+                BenchmarkResult = WatchstopBenchmark.Benchmark(Calculate,2,3)
             });
 
             return pc;

@@ -71,7 +71,7 @@ namespace EulerProject.Solutions.From_1_to_100
             {
                 Task = "Произведение abc, где a,b,c - тройка Пифагора и a + b + c = 1000",
                 Result = $"a = {a}, b = {b}, c = {c}, Произведение = {calc}",
-                BenchmarkResult = WatchstopBenchmark.Benchmark(Calculate,2,10)
+                BenchmarkResult = WatchstopBenchmark.Benchmark(Calculate,2,3)
             });
 
             return pc;
