@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using EulerProject.Solutions.From_1_to_100;
 using EulerProject.Utility.DataContainers;
+using EulerProject.Utility.Services;
 
 namespace EulerProject.Main
 {
@@ -11,13 +12,15 @@ namespace EulerProject.Main
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
-            // interface IProblem ensures that this types have CompleteProblem() method
+            WatchstopBenchmark.SetIgnoreConsts(false);
+
+            // интерфейс IProblem удостоверяется в том что данные типы обладают методом CompleteProblem()
             List<ProblemContainer> problems = new List<ProblemContainer>();
             List<Type> problemsTypes = new List<Type>
             {
                 typeof(One), typeof(Two), typeof(Three), typeof(Four), typeof(Five), 
                 typeof(Six), typeof(Seven), typeof(Eight), typeof(Nine), typeof(Ten),
-                typeof(Eleven), 
+                typeof(Eleven), typeof(Twelve),
             };
             
             foreach (var item in problemsTypes)
@@ -61,21 +64,26 @@ namespace EulerProject.Main
                 Console.WriteLine($"Случай №{counter}");
                 Console.WriteLine($"\t{problemCase.Task}");
                 Console.WriteLine($"\tРезультат: {problemCase.Result}");
-                double avarageMsRounded = Math.Round(problemCase.BenchmarkResult.AvarageMs, 2);
-                if (avarageMsRounded > 0 || problemCase.BenchmarkResult.MedianMs > 0)
-                {
-                    double avarageSecRounded = Math.Round(problemCase.BenchmarkResult.AvarageMs / 100.0, 2);
-                    double medianSecRounded = Math.Round(problemCase.BenchmarkResult.MedianMs / 100.0, 2);
 
-                    if(avarageSecRounded > 0 || medianSecRounded > 0)
+                if(problemCase.BenchmarkResult != null)
+                {
+                    double avarageMsRounded = Math.Round(problemCase.BenchmarkResult.AvarageMs, 2);
+                    if (avarageMsRounded > 0 || problemCase.BenchmarkResult.MedianMs > 0)
                     {
-                        Console.WriteLine($"\tСреднее сек: {avarageSecRounded}; Медианное сек: {Math.Round(medianSecRounded, 2)}");
+                        double avarageSecRounded = Math.Round(problemCase.BenchmarkResult.AvarageMs / 100.0, 2);
+                        double medianSecRounded = Math.Round(problemCase.BenchmarkResult.MedianMs / 100.0, 2);
+
+                        if (avarageSecRounded > 0 || medianSecRounded > 0)
+                        {
+                            Console.WriteLine($"\tСреднее сек: {avarageSecRounded}; Медианное сек: {Math.Round(medianSecRounded, 2)}");
+                        }
+
+                        Console.WriteLine($"\tСреднее мс: {avarageMsRounded}; Медианное мс: {problemCase.BenchmarkResult.MedianMs}");
                     }
 
-                    Console.WriteLine($"\tСреднее мс: {avarageMsRounded}; Медианное мс: {problemCase.BenchmarkResult.MedianMs}");
+                    Console.WriteLine($"\tСреднее тики: {Math.Round(problemCase.BenchmarkResult.AvarageTicks, 2)}; Медианное тики: {problemCase.BenchmarkResult.MedianTicks}");
                 }
                 
-                Console.WriteLine($"\tСреднее тики: {Math.Round(problemCase.BenchmarkResult.AvarageTicks, 2)}; Медианное тики: {problemCase.BenchmarkResult.MedianTicks}");
                 counter++;
             }
             Console.Write("\n\n");
