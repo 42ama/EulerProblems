@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using EulerProblems.Solutions.From_1_to_100;
 using EulerProblems.Utility.DataContainers;
@@ -20,13 +21,16 @@ namespace EulerProblems.Main
             {
                 typeof(One), typeof(Two), typeof(Three), typeof(Four), typeof(Five), 
                 typeof(Six), typeof(Seven), typeof(Eight), typeof(Nine), typeof(Ten),
-                typeof(Eleven), typeof(Twelve),
+                typeof(Eleven), typeof(Twelve), typeof(Thirteen),
             };
+
             
+            // тестируем последную добавленную проблему (ту над которой ведется работа)
+            RunSingle(problemsTypes.Last());
+
             foreach (var item in problemsTypes)
             {
-                ProblemContainer problem = (ProblemContainer)item.GetMethod("CompleteProblem").Invoke(Activator.CreateInstance(item), null);
-                DisplayProblem(problem);
+                RunSingle(item);
             }
 
             Console.WriteLine("Готово.");
@@ -87,6 +91,12 @@ namespace EulerProblems.Main
                 counter++;
             }
             Console.Write("\n\n");
+        }
+
+        private static void RunSingle(Type type)
+        {
+            ProblemContainer problem = (ProblemContainer)type.GetMethod("CompleteProblem").Invoke(Activator.CreateInstance(type), null);
+            DisplayProblem(problem);
         }
     }
 
