@@ -144,7 +144,7 @@ namespace EulerProblems.Solutions.From_1_to_100
         {
             ProblemContainer pc = new ProblemContainer()
             {
-                Number = 12,
+                Number = 13,
                 Task = content,
                 Cases = new List<CaseContainer>()
             };
