@@ -26,6 +26,17 @@ namespace EulerProblems.Utility.Helpers
             set.Add(number);
             return set;
         }
+        public static ISet<int> Divisors(int number)
+        {
+            ISet<int> set = DivisorsWithoutTypical(number);
+
+            // первый общий делитель - единица
+            set.Add(1);
+            // второй общий делитель - само число
+            set.Add(number);
+            return set;
+        }
+
 
         /// <summary>
         /// Возвращает сэт уникальных делителей для числа, то есть тот в который не включается само число и единица
@@ -36,6 +47,22 @@ namespace EulerProblems.Utility.Helpers
         {
             HashSet<long> set = new HashSet<long>();
             for (long i = 2; i <= (long)Math.Floor(Math.Sqrt(number)); i++)
+            {
+                if (number % i == 0)
+                {
+                    set.Add(i);
+                    if (number / i != i)
+                    {
+                        set.Add(number / i);
+                    }
+                }
+            }
+            return set;
+        }
+        public static ISet<int> DivisorsWithoutTypical(int number)
+        {
+            HashSet<int> set = new HashSet<int>();
+            for (int i = 2; i <= (int)Math.Floor(Math.Sqrt(number)); i++)
             {
                 if (number % i == 0)
                 {
