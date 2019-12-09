@@ -19,26 +19,6 @@ namespace EulerProblems.Solutions.From_1_to_100
             "F1 = 1 F2 = 1 F3 = 2 F4 = 3 F5 = 5 F6 = 8 F7 = 13 F8 = 21 " +
             "F9 = 34 F10 = 55 F11 = 89 F12 = 144 Двенадцатый член F12 - первый член последовательности, который содержит три цифры. Каков порядковый номер первого члена последовательности Фибоначчи, содержащего 1000 цифр?";
 
-        bool IsOverflow(int a, int b)
-        {
-            int result = a + b;
-            if (a > 0 && b > 0 && result < 0)
-                return true;
-            if (a < 0 && b < 0 && result > 0)
-                return true;
-            return false;
-        }
-
-        bool IsOverflow(long a, long b)
-        {
-            long result = a + b;
-            if (a > 0 && b > 0 && result < 0)
-                return true;
-            if (a < 0 && b < 0 && result > 0)
-                return true;
-            return false;
-        }
-
         private long Calculate(int numberLength)
         {
             BigInteger firstB = 1;
