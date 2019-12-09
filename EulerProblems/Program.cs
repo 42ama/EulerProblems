@@ -23,7 +23,8 @@ namespace EulerProblems.Main
                 typeof(Six), typeof(Seven), typeof(Eight), typeof(Nine), typeof(Ten),
                 typeof(Eleven), typeof(Twelve), typeof(Thirteen), typeof(Fourteen), typeof(Fiveteen),
                 typeof(Sixteen), typeof(Seventeen), typeof(Eighteen), typeof(Nineteen), typeof(Twenty),
-                typeof(TwentyOne), typeof(TwentyTwo), typeof(TwentyThree), typeof(TwentyFour)
+                typeof(TwentyOne), typeof(TwentyTwo), typeof(TwentyThree), typeof(TwentyFour), typeof(TwentyFive),
+
             };
 
             
