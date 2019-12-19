@@ -6,11 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\22_names.txt" />
+    <None Remove="Model\Resources\22_names.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Resources\22_names.txt">
+    <Content Include="Model\Resources\22_names.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
