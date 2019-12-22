@@ -6,6 +6,9 @@ namespace EulerProblems.Model.Utility.Helpers
 {
     public static partial class Helper
     {
+        /// <summary>
+        /// Возвращает наибольший общий делитель двух чисел
+        /// </summary>
         public static int GreatestCommonDivisor(int a, int b)
         {
             int y;

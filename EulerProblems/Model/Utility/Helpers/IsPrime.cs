@@ -4,6 +4,9 @@ namespace EulerProblems.Model.Utility.Helpers
 {
     public static partial class Helper
     {
+        /// <summary>
+        /// Возвращает true если число является простым и false в противном случае
+        /// </summary>
         public static bool IsPrime(int number)
         {
             if (number <= 1) { return false; }
@@ -20,6 +23,9 @@ namespace EulerProblems.Model.Utility.Helpers
             return true;
         }
 
+        /// <summary>
+        /// Возвращает true если число является простым и false в противном случае
+        /// </summary>
         public static bool IsPrime(long number)
         {
             if (number <= 1) { return false; }

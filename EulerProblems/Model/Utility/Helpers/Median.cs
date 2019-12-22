@@ -4,6 +4,9 @@ namespace EulerProblems.Model.Utility.Helpers
 {
     public static partial class Helper
     {
+        /// <summary>
+        /// Возвращает медиану массива чисел
+        /// </summary>
         public static double Median(long[] arr)
         {
             double median;

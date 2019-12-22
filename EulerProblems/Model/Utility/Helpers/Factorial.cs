@@ -6,6 +6,9 @@ namespace EulerProblems.Model.Utility.Helpers
 {
     public static partial class Helper
     {
+        /// <summary>
+        /// Возвращает факториал числа
+        /// </summary>
         public static BigInteger Factorial(long number)
         {
             BigInteger value = new BigInteger(1);
