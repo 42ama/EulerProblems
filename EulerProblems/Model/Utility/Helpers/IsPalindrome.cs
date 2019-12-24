@@ -7,7 +7,7 @@ namespace EulerProblems.Model.Utility.Helpers
         /// <summary>
         /// Возвращает true если число является палиндромом(зеркально относительно середины) и false в противном случае
         /// </summary>
-        public static bool IsPalindome(char[] numeric)
+        public static bool IsPalindrome(char[] numeric)
         {
             for (int i = 0; i < (int)Math.Ceiling((double)numeric.Length / 2); i++)
             {

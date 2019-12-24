@@ -24,7 +24,7 @@ namespace EulerProblems.Model.Solutions.From_1_to_100
                 for (int j = 100; j <= 999; j++)
                 {
                     int multi = i * j;
-                    if (Helper.IsPalindome(multi.ToString().ToCharArray()) && (multi) > maxi)
+                    if (Helper.IsPalindrome(multi.ToString().ToCharArray()) && (multi) > maxi)
                     {
                         numberA = i;
                         numberB = j;
