@@ -62,7 +62,7 @@ namespace EulerProblems.Model.Solutions.From_1_to_100
             {
                 Task = "Какое существует наибольшее n-значное пан-цифровое простое число?",
                 Result = Calculate().ToString(),
-                BenchmarkResult = WatchstopBenchmark.Benchmark(CalculateBench, 1, 1)
+                BenchmarkResult = WatchstopBenchmark.Benchmark(CalculateBench, 3, 3)
             });
 
             return pc;
