@@ -6,74 +6,78 @@ namespace EulerProblems.Model.Utility.Helpers
 {
     public static partial class Helper
     {
-        // Каждое n-значное число, которое содержит каждую цифру от 1 до n ровно один раз, будем считать пан-цифровым
+        // Каждое n-значное число, которое содержит каждую цифру от 0 или 1 до n ровно один раз, будем считать пан-цифровым
+
         /// <summary>
-        /// Проверяет является ли заданное число пан-цифровым по основанию panBase (без учета 0я)
+        /// Проверяет является ли заданное число пан-цифровым по основанию panBase
         /// </summary>
         /// <param name="panBase">Основание пан-цифрового числа. Должно быть в пределах от 1 до 9и.</param>
+        /// <param name="startFromZero">Если true, то первым числом считается 0 иначе 1.</param>
         /// <returns>true - если число пан-цифровое по заданому основнию, false - если иначе</returns>
-        public static bool IsPandigital(int number, int panBase)
+        public static bool IsPandigital(int number, int panBase, bool startFromZero = false)
         {
-            IsPanBaseValid(panBase);
-
-            HashSet<int> digits = new HashSet<int>();
-            var panBaseValues = new int[panBase];
-
-            for (int i = 0; i < panBase; i++)
-            {
-                panBaseValues[i] = i+1;
-            }
-
-            while (number != 0)
-            {
-                int digit = number % 10;
-                if (digit == 0)
-                {
-                    return false;
-                }
-                if (digits.Contains(digit))
-                {
-                    return false;
-                }
-                digits.Add(digit);
-                number /= 10;
-            }
-
-            // не учитываем 0
-            digits.Remove(0);
-            
-            if (panBaseValues.All(digits.Contains))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return IsPandigital(number.ToString(), panBase, startFromZero);
         }
 
-        // Каждое n-значное число, которое содержит каждую цифру от 1 до n ровно один раз, будем считать пан-цифровым
         /// <summary>
-        /// Проверяет является ли заданное число пан-цифровым по основанию panBase (без учета 0я)
+        /// Проверяет является ли заданное число пан-цифровым по основанию panBase
         /// </summary>
         /// <param name="panBase">Основание пан-цифрового числа. Должно быть в пределах от 1 до 9и.</param>
+        /// <param name="startFromZero">Если true, то первым числом считается 0 иначе 1.</param>
         /// <returns>true - если число пан-цифровое по заданому основнию, false - если иначе</returns>
-        public static bool IsPandigital(char[] number, int panBase)
+        public static bool IsPandigital(long number, int panBase, bool startFromZero = false)
+        {
+            return IsPandigital(number.ToString(), panBase, startFromZero);
+        }
+
+        /// <summary>
+        /// Проверяет является ли заданное число пан-цифровым по основанию panBase
+        /// </summary>
+        /// <param name="panBase">Основание пан-цифрового числа. Должно быть в пределах от 1 до 9и.</param>
+        /// <param name="startFromZero">Если true, то первым числом считается 0 иначе 1.</param>
+        /// <returns>true - если число пан-цифровое по заданому основнию, false - если иначе</returns>
+        public static bool IsPandigital(string number, int panBase, bool startFromZero = false)
+        {
+            return IsPandigital(number.ToCharArray(), panBase, startFromZero);
+        }
+
+        /// <summary>
+        /// Проверяет является ли заданное число пан-цифровым по основанию panBase
+        /// </summary>
+        /// <param name="panBase">Основание пан-цифрового числа. Должно быть в пределах от 1 до 9и.</param>
+        /// <param name="startFromZero">Если true, то первым числом считается 0 иначе 1.</param>
+        /// <returns>true - если число пан-цифровое по заданому основнию, false - если иначе</returns>
+        public static bool IsPandigital(char[] number, int panBase, bool startFromZero = false)
         {
             IsPanBaseValid(panBase);
 
             HashSet<char> digits = new HashSet<char>();
-            var panBaseValues = new char[panBase];
+            char[] panBaseValues;
+            int startingCharValue;
+            int endingCharValue;
 
-            // набирает массив символов начиная с 1 до panBase
-            for (int i = 48; i < panBase+48; i++)
+            if(startFromZero)
             {
-                panBaseValues[i-48] = (char)(i + 1);
+                startingCharValue = 47;
+                endingCharValue = panBase + startingCharValue + 1;
+                panBaseValues = new char[panBase + 1];
+            }
+            else
+            {
+                startingCharValue = 48;
+                endingCharValue = panBase + startingCharValue;
+                panBaseValues = new char[panBase];
+            }
+
+            // набирает массив символов начиная с 0 или 1 до panBase
+            for (int i = startingCharValue; i < endingCharValue; i++)
+            {
+                panBaseValues[i - startingCharValue] = (char)(i + 1);
             }
 
             foreach (var digit in number)
             {
-                if(digit == '0')
+                if(digit == '0' && !startFromZero)
                 {
                     return false;
                 }

@@ -55,7 +55,7 @@ namespace EulerProblems.Model.Solutions.From_1_to_100
                     }
                     
 
-                    if(Helper.IsPandigital(product.ToString().ToCharArray(), 9))
+                    if(Helper.IsPandigital(product.ToString(), 9))
                     {
                         int productNum = Int32.Parse(product.ToString());
                         if (productNum > max)

@@ -56,7 +56,7 @@ namespace EulerProblems.Model.Solutions.From_1_to_100
                     {
                         if (!numbersToIgnore.Contains(number))
                         {
-                            if (Helper.IsPandigital(numberSB.ToString().ToCharArray(), 9))
+                            if (Helper.IsPandigital(numberSB.ToString(), 9))
                             {
                                 summ += number;
                                 numbersToIgnore.Add(number);
