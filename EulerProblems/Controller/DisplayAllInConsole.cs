@@ -25,7 +25,7 @@ namespace EulerProblems.Controller
             var lastProblem = ProblemHandling.RunSingle(problemsTypes.Last());
             DisplayProblem(lastProblem);
 
-            Console.WriteLine("\nНажмите клавишу, чтобы продолжить...");
+            Console.WriteLine("\nНажмите клавишу, чтобы произвести решение остальных проблем начиная с первой...");
             Console.ReadKey();
 
             foreach (var problemType in problemsTypes)
