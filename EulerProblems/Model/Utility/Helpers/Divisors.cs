@@ -12,10 +12,10 @@ namespace EulerProblems.Model.Utility.Helpers
         }
 
         /// <summary>
-        /// Возвращает сэт делителей для числа, включая единицу и само число
+        /// Возвращает множество делителей для числа, включая единицу и само число
         /// </summary>
         /// <param name="number">Число для которого считаются делители</param>
-        /// <returns>Сэт делителей для числа, включая единицу и само число</returns>
+        /// <returns>Множество делителей для числа, включая единицу и само число</returns>
         public static ISet<long> Divisors(long number)
         {
             ISet<long> set = DivisorsWithoutTypical(number);
@@ -39,10 +39,10 @@ namespace EulerProblems.Model.Utility.Helpers
 
 
         /// <summary>
-        /// Возвращает сэт уникальных делителей для числа, то есть тот в который не включается само число и единица
+        /// Возвращает множество уникальных делителей для числа, то есть то в которое не включается само число и единица
         /// </summary>
         /// <param name="number">Число для которого считаются делители</param>
-        /// <returns>Сэт уникальных делителей для числа</returns>
+        /// <returns>Множество уникальных делителей для числа</returns>
         public static ISet<long> DivisorsWithoutTypical(long number)
         {
             HashSet<long> set = new HashSet<long>();
@@ -74,6 +74,26 @@ namespace EulerProblems.Model.Utility.Helpers
                 }
             }
             return set;
+        }
+
+        /// <summary>
+        /// Возвращает множество уникальных простых делителей для числа, то есть то в которое не включается само число и единица 
+        /// </summary>
+        /// <param name="number">Число для которого считаются делители</param>
+        /// <returns>Множество уникальных простых делителей для числа</returns>
+        public static ISet<int> DivisorsPrimeWithoutTypical(int number)
+        {
+            var divisors = DivisorsWithoutTypical(number);
+            var primeDivisors = new HashSet<int>();
+            foreach (var divisor in divisors)
+            {
+                if (Helper.IsPrime(divisor))
+                {
+                    primeDivisors.Add(divisor);
+                }
+            }
+
+            return primeDivisors;
         }
     }
 }
