@@ -89,7 +89,7 @@ namespace EulerProblems.Model.Solutions.From_1_to_100
                 }
 
             }
-            return "ошибка, ответ не найден";
+            throw new Exception("Ошибка, решение не найдено");
         }
 
         private void CalculateBench()
