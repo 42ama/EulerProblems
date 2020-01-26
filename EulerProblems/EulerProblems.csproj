@@ -15,4 +15,10 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Model\Resources\p042_words.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
