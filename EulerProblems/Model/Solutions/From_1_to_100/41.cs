@@ -32,7 +32,7 @@ namespace EulerProblems.Model.Solutions.From_1_to_100
                     max = number;
                 }
 
-                if(number.CountDigits() > panBase)
+                if(number.Length() > panBase)
                 {
                     panBase++;
                 }
