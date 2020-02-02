@@ -25,6 +25,7 @@ namespace EulerProblems.Controller
                 typeof(FortyOne), typeof(FortyTwo), typeof(FortyThree), typeof(FortyFour), typeof(FortyFive),
                 typeof(FortySix), typeof(FortySeven), typeof(FortyEight), typeof(FortyNine), typeof(Fifty),
                 typeof(FiftyTwo), typeof(FiftyThree), typeof(FiftyFour), typeof(FiftyFive),
+                typeof(FiftySix), 
             };
         }
 
